@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 
 /*
     Listing.jsx
@@ -85,9 +86,9 @@ export default function Listing() {
 
             <div style={styles.grid}>
                 {filtered.map((p) => (
-                    <a
+                    <Link
                         key={p.id}
-                        href={`/details?id=${encodeURIComponent(p.id)}`}
+                        to={`/details?id=${encodeURIComponent(p.id)}`}
                         style={{ textDecoration: "none", color: "inherit" }}
                         aria-label={`View details for ${p.title}`}
                     >
@@ -109,7 +110,7 @@ export default function Listing() {
                                 </p>
                             </div>
                         </article>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </div>
